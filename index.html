@@ -1,1 +1,299 @@
-<h1> Hello World! </h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Text-Guided Vector Graphics Customization">
+  <meta name="keywords" content="Vector Graphics, Stable Diffusion">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text-Guided Vector Graphics Customization</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Text-Guided Vector Graphics Customization</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Peiying Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="http://nxzhao.com/">Nanxuan Zhao</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://liaojing.github.io/html/">Jing Liao</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>City University of Hong Kong,</span>
+            <span class="author-block"><sup>2</sup>Adobe Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (comming soon)</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+      <img id="teaser" src="./static/images/teaser_representative.png"
+      class="interpolation-image"
+      alt="Teaser image."/>
+
+      <h2 class="subtitle has-text-centered">
+        <span class="">Our results on text-guided vector graphics customization. Given an exemplar vector graphic in the SVG format (a), our model can generate customized vector graphics (b) based on the diverse text inputs while keep the visual identity V* of the exemplar SVG.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Vector graphics are widely used in digital art and valued by designers for their scalability and layer-wise topological properties. However, the creation and editing of vector graphics necessitate creativity and design expertise, leading to a time-consuming process.
+          </p>
+          <p>
+            In this paper, we propose a novel pipeline that generates high-quality customized vector graphics based on textual prompts while preserving the properties and layer-wise information of a given exemplar SVG.
+            Our method harnesses the capabilities of large pre-trained text-to-image models. By fine-tuning the cross-attention layers of the model, we generate customized raster images guided by textual prompts. To initialize the SVG, we introduce a semantic-based path alignment method that preserves and transforms crucial paths from the exemplar SVG. Additionally, we optimize path parameters using both image-level and vector-level losses, ensuring smooth shape deformation while aligning with the customized raster image.
+          </p>
+          <p>
+            We extensively evaluate our method using multiple metrics from vector-level, image-level, and text-level perspectives. The evaluation results demonstrate the effectiveness of our pipeline in generating diverse customizations of vector graphics with exceptional quality.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+
+<!-- Methods section -->
+<Section>
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Methods</h2>
+      
+      <div class="column is-full-width">
+        
+        <div class="content has-text-justified">
+          <img src="static/images/pipeline_v12.png">
+          <p> 
+            Text-Guided vector graphics customization pipeline.
+            Given an exemplar SVG and a text prompt as input (a), the method consists of three stages. (b) Concept Fine-tuning: By fine-tuning a pre-trained T2I model, a customized raster image is generated based on the text prompt. 
+            (c) Path Alignment: Important paths from the exemplar SVG are adapted based on semantic correspondences with the customized raster image, providing an initial customized SVG.
+            (d) Path Optimization: The path parameters are optimized using both image-level and vector-level losses to produce the final customized SVG (e).
+          </p>
+        </div>
+      </div>
+  </div>
+</Section>
+<!-- Methods section -->
+
+
+<!-- Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+  <h2 class="title is-3 has-text-centered"> Results </h2>
+
+    <div class="hero-body">
+      <!-- image demo -->
+      <div class="container"> 
+        <!-- <h2 class="title is-6", style="text-align: center;"> Consistent Synthesis and Editing Results</h2> -->
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <img src="static/images/result_v9_1.png">
+          </div>
+          <div class="item item-chair-tp">
+            <img src="static/images/result_v9_2.png">
+          </div>
+          <div class="item item-chair-tp">
+            <img src="static/images/result_v9_3.png">
+          </div>
+          <div class="item">
+            <img src="static/images/result_v9_4.png">
+          </div>
+          <div class="item">
+            <img src="static/images/result_v9_5.png">
+          </div>
+          <div class="item">
+            <img src="static/images/result_v9_6.png">
+          </div>
+          <div class="item">
+            <img src="static/images/result_v9_7.png">
+          </div>
+          <div class="item">
+            <img src="static/images/result_v9_8.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- More Results -->
+    <div class="column is-full-width">
+      <h2 class="title is-4 has-text-centered">Results of text-guided vector graphics customizations</h2>    
+      <img src="static/images/more_result_v5.png" width="100%">
+      <!-- <p>
+        Results of our text-guided vector graphics customization.
+      </p> -->
+    </div>
+    <!--/ More Results -->
+
+  </div>
+
+</section>
+<!-- Results -->
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      <!-- @article{
+        zhang2023textguided,
+        author    = {Peiying Zhang, Nanxuan Zhao and Jing Liao},
+        title     = {Text-Guided Vector Graphics Customization},
+        journal   = {SIGGRAPH ASIA},
+        year      = {2023},
+      } -->
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
